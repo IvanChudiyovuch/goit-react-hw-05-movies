@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import {
   Container,
@@ -9,11 +9,12 @@ import {
 
 export const RenderMovieDetails = ({ respons, id }) => {
   const imageUrl = 'https://image.tmdb.org/t/p/w500';
-  const { poster_path, overview, title, vote_average, release_date } = respons;
+  const { poster_path, overview, title, vote_average, genres, release_date } =
+    respons;
   const releaseDate = release_date
     ? release_date.slice(0, 4)
     : 'no release date';
-  console.log(respons);
+
   return (
     <>
       <Container key={id}>
@@ -27,14 +28,11 @@ export const RenderMovieDetails = ({ respons, id }) => {
             <h4>Overview</h4>
             <p>{overview}</p>
             <h4>Genres</h4>
-            {/* <ul key={genres.id}>
-              <li>{genres.name}</li>
-            </ul> */}
-            {/* {genres.map(({ id, name }) => (
-              <ul key={id}>
-                <li>{name}</li>
-              </ul>
-            ))} */}
+            {genres.map(({ id, name }) => (
+              <div key={id}>
+                <div>{name}</div>
+              </div>
+            ))}
           </ListItem>
         </List>
       </Container>
@@ -42,16 +40,28 @@ export const RenderMovieDetails = ({ respons, id }) => {
   );
 };
 
-RenderMovieDetails.propTypes = {
-  respons: PropTypes.arrayOf(
-    PropTypes.shape({
-      // id: PropTypes.number.isRequired,
-      poster_path: PropTypes.string.isRequired,
-      overview: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      vote_average: PropTypes.number.isRequired,
-      genres: PropTypes.array.isRequired,
-    })
-  ),
-  id: PropTypes.string.isRequired,
-};
+// RenderMovieDetails.propTypes = {
+//   respons: PropTypes.objectOf({
+//     id: PropTypes.number,
+//     poster_path: PropTypes.string,
+//     overview: PropTypes.string,
+//     title: PropTypes.string,
+//     vote_average: PropTypes.number,
+//     genres: PropTypes.array,
+//   }),
+// };
+
+// RenderMovieDetails.propTypes = {
+//   respons: PropTypes.objectOf(
+//     PropTypes.shape({
+//       id: PropTypes.number,
+//       poster_path: PropTypes.string,
+//       overview: PropTypes.string,
+//       title: PropTypes.string,
+//       vote_average: PropTypes.number,
+//       genres: PropTypes.array,
+//       adult: PropTypes.bool,
+//     })
+//   ).isRequired,
+//   id: PropTypes.string.isRequired,
+// };

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import Notiflix from 'notiflix';
 
 import { SerchForm } from 'components/SerchForm/SerchForm';
 import { GetSearchMovie } from '../components/Fetch/FetchApi';
@@ -32,8 +31,6 @@ export const Movies = () => {
     <div>
       <SerchForm onSubmit={formSubmitHandler} />
       {movies?.length > 0 && <RenderMovieList results={movies} />}
-      {/* {movies?.length === 0 &&
-        Notiflix.Notify.warning(`Error Image with name ${query} not found!`)} */}
     </div>
   );
 };

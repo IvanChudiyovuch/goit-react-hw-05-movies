@@ -11,7 +11,6 @@ export const Reviews = () => {
       const respons = await getMovieRewiews(id);
       const reviews = respons.results;
       setRewiews(reviews);
-      console.log(reviews);
     })();
   }, [id]);
   return (

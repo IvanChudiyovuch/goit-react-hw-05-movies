@@ -27,12 +27,3 @@ export const ListItem = styled.li`
 export const ListImage = styled.img`
   height: 400px;
 `;
-export const GenresList = styled.ul`
-  display: flex;
-  justify-content: center;
-  align-items: centr;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-`;

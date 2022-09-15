@@ -26,7 +26,6 @@ export const GetDetails = async id => {
       `${baseURL}movie/${id}?api_key=${APIKey}&language=en-US`
     );
 
-    console.log(respons.data);
     return respons.data;
   } catch (err) {
     console.log(err);
@@ -41,8 +40,6 @@ export const GetSearchMovie = async query => {
       `${baseURL}search/movie?api_key=${APIKey}&language=en-US&query=${query}&page=1&include_adult=false`
     );
 
-    console.log(results);
-
     return { results };
   } catch (err) {
     console.log(err);
@@ -54,7 +51,6 @@ export const getMovieCredits = async id => {
     const response = await axios.get(
       `${baseURL}movie/${id}/credits?api_key=${APIKey}&language=en-US`
     );
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -66,7 +62,6 @@ export const getMovieRewiews = async id => {
     const response = await axios.get(
       `${baseURL}movie/${id}/reviews?api_key=${APIKey}&language=en-US`
     );
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
