@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types';
 import axios from 'axios';
 
 const baseURL = 'https://api.themoviedb.org/3/';
@@ -66,4 +67,12 @@ export const getMovieRewiews = async id => {
   } catch (error) {
     console.log(error);
   }
+};
+
+GetDetails.propTypes = {
+  id: PropTypes.number.isRequired,
+};
+
+GetSearchMovie.propTypes = {
+  id: PropTypes.string.isRequired,
 };

@@ -4,7 +4,7 @@ import { RenderMovieDetails } from 'components/RenderMovieList/RenderMovieDetail
 import { GetDetails } from '../components/Fetch/FetchApi';
 import GoBack from '../components/GoBack/GoBack';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { id } = useParams();
   const [respons, setRespons] = useState(null);
   const location = useLocation();
@@ -46,3 +46,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;

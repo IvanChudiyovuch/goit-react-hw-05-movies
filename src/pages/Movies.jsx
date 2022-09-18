@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-
+import { useSearchParams } from 'react-router-dom';
 import { SerchForm } from 'components/SerchForm/SerchForm';
 import { GetSearchMovie } from '../components/Fetch/FetchApi';
 import { RenderMovieList } from 'components/RenderMovieList/RenderMovieList';
 
-export const Movies = () => {
-  const [query, setQuery] = useState('');
-  const [movies, setMovies] = useState([]);
+const Movies = () => {
+  const [movies, setMovies] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get('query') ?? '';
 
   useEffect(() => {
     if (query === '') {
@@ -16,15 +17,14 @@ export const Movies = () => {
     (async () => {
       const data = await GetSearchMovie(query);
       const Movie = data.results;
-      setMovies(prevState => [...prevState, ...Movie]);
+      setMovies(Movie);
     })();
   }, [query]);
 
   const formSubmitHandler = query => {
-    if (query) {
-      setMovies([]);
-      setQuery(query);
-    }
+    const nextQuery = query !== '' ? { query } : {};
+    setSearchParams(nextQuery);
+    setMovies([]);
   };
 
   return (
@@ -34,3 +34,5 @@ export const Movies = () => {
     </div>
   );
 };
+
+export default Movies;

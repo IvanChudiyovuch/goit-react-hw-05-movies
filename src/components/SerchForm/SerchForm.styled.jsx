@@ -11,12 +11,7 @@ export const Wraper = styled.div`
   min-height: ${p => p.theme.space[6]}px;
   padding-right: ${p => p.theme.space[5]}px;
   padding-left: ${p => p.theme.space[5]}px;
-  padding-top: ${p => p.theme.space[4]}px;
-  padding-bottom: ${p => p.theme.space[4]}px;
   color: ${p => p.theme.colors.white};
-  background-color: ${p => p.theme.colors.serch};
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
 
 export const FormSerch = styled.form`
@@ -25,6 +20,7 @@ export const FormSerch = styled.form`
   width: 100%;
   max-width: 600px;
   background-color: ${p => p.theme.colors.white};
+  border: 1px solid ${p => p.theme.colors.black};
   border-radius: 3px;
   overflow: hidden;
 `;
@@ -35,6 +31,7 @@ export const SearchFormInput = styled.input`
   font: inherit;
   font-size: ${p => p.theme.fontSizes.m};
   border: none;
+
   outline: none;
   padding-left: ${p => p.theme.space[2]}px;
   padding-right: ${p => p.theme.space[2]}px;

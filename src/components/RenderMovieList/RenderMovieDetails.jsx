@@ -1,5 +1,3 @@
-// import PropTypes from 'prop-types';
-
 import {
   Container,
   List,
@@ -39,29 +37,3 @@ export const RenderMovieDetails = ({ respons, id }) => {
     </>
   );
 };
-
-// RenderMovieDetails.propTypes = {
-//   respons: PropTypes.objectOf({
-//     id: PropTypes.number,
-//     poster_path: PropTypes.string,
-//     overview: PropTypes.string,
-//     title: PropTypes.string,
-//     vote_average: PropTypes.number,
-//     genres: PropTypes.array,
-//   }),
-// };
-
-// RenderMovieDetails.propTypes = {
-//   respons: PropTypes.objectOf(
-//     PropTypes.shape({
-//       id: PropTypes.number,
-//       poster_path: PropTypes.string,
-//       overview: PropTypes.string,
-//       title: PropTypes.string,
-//       vote_average: PropTypes.number,
-//       genres: PropTypes.array,
-//       adult: PropTypes.bool,
-//     })
-//   ).isRequired,
-//   id: PropTypes.string.isRequired,
-// };

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getMovieCredits } from '../Fetch/FetchApi';
 import { CastList } from './CastList';
 
-export const Cast = () => {
+const Cast = () => {
   const { id } = useParams();
   const [credits, setCredits] = useState([]);
   useEffect(() => {
@@ -24,3 +24,5 @@ export const Cast = () => {
     </div>
   );
 };
+
+export default Cast;

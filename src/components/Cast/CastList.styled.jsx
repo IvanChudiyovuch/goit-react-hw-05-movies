@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 export const Container = styled.div`
   display: flex;
   margin: 0 auto;
@@ -22,11 +23,11 @@ export const ListItem = styled.li`
   padding: ${p => p.theme.space[2]}px;
   flex-wrap: wrap;
   object-fit: cover;
+  flex-grow: 1;
 `;
 
 export const ListImage = styled.img`
   width: 100%;
-  //   height: 100%;
 `;
 
 export const ActorContent = styled.div`
