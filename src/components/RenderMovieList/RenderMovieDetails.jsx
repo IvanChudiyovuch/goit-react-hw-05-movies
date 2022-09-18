@@ -4,9 +4,9 @@ import {
   ListItem,
   ListImage,
 } from './RenderMovieDetail.styled';
+import defaultImage from '../../defaultImage.jpg';
 
 export const RenderMovieDetails = ({ respons, id }) => {
-  const imageUrl = 'https://image.tmdb.org/t/p/w500';
   const { poster_path, overview, title, vote_average, genres, release_date } =
     respons;
   const releaseDate = release_date
@@ -16,7 +16,15 @@ export const RenderMovieDetails = ({ respons, id }) => {
   return (
     <>
       <Container key={id}>
-        <ListImage src={imageUrl + poster_path} alt={title} width="320" />
+        <ListImage
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500${poster_path}`
+              : defaultImage
+          }
+          alt={title}
+          width="320"
+        />
         <List>
           <ListItem>
             <h3>

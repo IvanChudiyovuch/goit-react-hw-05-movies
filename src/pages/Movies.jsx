@@ -31,6 +31,11 @@ const Movies = () => {
     <div>
       <SerchForm onSubmit={formSubmitHandler} />
       {movies?.length > 0 && <RenderMovieList results={movies} />}
+      {movies?.length === 0 && (
+        <p>
+          Sorry, there is no films for your results! Try to find something else!
+        </p>
+      )}
     </div>
   );
 };
